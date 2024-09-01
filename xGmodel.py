@@ -1,34 +1,13 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Mar 24 18:32:18 2020
-
-"""
-
-# The basics
 import pandas as pd
 import numpy as np
 import json
 
-import streamlit as st
-
-from streamlit_image_coordinates import streamlit_image_coordinates
-
-# Plotting
-import matplotlib.pyplot as plt
-
-# Statistical fitting of models
 import statsmodels.api as sm
 import statsmodels.formula.api as smf
 
-import warnings
-
-# Decide which league to load
-# Wyscout data from https://figshare.com/collections/Soccer_match_event_dataset/4415000/2
 with open('data/events_England.json') as f:
     data = json.load(f)
 
-# Create a data set of shots.
 train = pd.DataFrame(data)
 pd.unique(train['subEventName'])
 shots = train[train['subEventName'] == 'Shot']
@@ -68,7 +47,6 @@ for v in model_variables[:-1]:
     model = model + v + ' + '
 model = model + model_variables[-1]
 
-# Fit the model
 test_model = smf.glm(formula="Goal ~ " + model, data=shots_model,
                      family=sm.families.Binomial()).fit()
 
