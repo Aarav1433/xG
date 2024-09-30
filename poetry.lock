@@ -2923,6 +2923,22 @@ watchdog = {version = ">=2.1.5,<5", markers = "platform_system != \"Darwin\""}
 snowflake = ["snowflake-connector-python (>=2.8.0)", "snowflake-snowpark-python (>=0.9.0)"]
 
 [[package]]
+name = "streamlit-drawable-canvas"
+version = "0.9.3"
+description = "A Streamlit custom component for a free drawing canvas using Fabric.js."
+optional = false
+python-versions = ">=3.6"
+files = [
+    {file = "streamlit-drawable-canvas-0.9.3.tar.gz", hash = "sha256:a31e581bfd63545ecbca71bc3286c09f0542e4199109d33f56392345996802f5"},
+    {file = "streamlit_drawable_canvas-0.9.3-py3-none-any.whl", hash = "sha256:fbb5e29017d359d5438e327ca0a64d0b337a9f2e1f999cd7593baa5bb8a27c25"},
+]
+
+[package.dependencies]
+numpy = "*"
+Pillow = "*"
+streamlit = ">=0.63"
+
+[[package]]
 name = "streamlit-image-coordinates"
 version = "0.1.9"
 description = "Streamlit component that displays an image and returns the coordinates when you click on it"
@@ -3223,4 +3239,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "21b9d4b48b31d8e036f0af4db3675bf7b3c9127e29c08d3721c3120062e76dff"
+content-hash = "c9706b155a89bff39dec04cb7da591279f34e261ff53942339722cd1c81f7736"
