@@ -12,7 +12,7 @@ from PIL import Image
 field = Image.open("field.jpg")
 canvas_result = st_canvas(
     background_image=field,
-    drawing_mode="point", stroke_width = 5, stroke_color = "red", height = 512, width = 427, update_streamlit = True
+    drawing_mode="point", stroke_width = 5, stroke_color="red", height=512, width=427, update_streamlit=True
 )
 
 test_model = sm.load("test_model.pkl")
