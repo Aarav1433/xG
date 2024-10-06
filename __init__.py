@@ -9,9 +9,15 @@ import pandas as pd
 
 from PIL import Image
 
+field = Image.open("field.jpg")
 canvas_result = st_canvas(
-    background_image=Image.open("field.jpg"),
-    drawing_mode="point", stroke_width = 5, stroke_color = "red", height = 512, width = 427, update_streamlit = True
+    background_image=field,
+    drawing_mode="circle",
+    stroke_width = 5,
+    stroke_color="red",
+    height=512,
+    width=427,
+    update_streamlit=True
 )
 
 test_model = sm.load("test_model.pkl")
