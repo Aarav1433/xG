@@ -19,7 +19,7 @@ st.markdown("""
 
 st.markdown('<p class="big-font">xG Calculator for Soccer by: Aarav Patel</p>', unsafe_allow_html=True)
 
-st.write("Welcome to my xG calculator for shots in soccer. This model was trained based off data from the top flight of English football. To use this model, simply click on the field based on where the shot was taken. Then, below will be a list of all the shots and the expected goals for each of them. Enjoy!")
+st.write("Welcome to my xG calculator for shots in soccer. This model was trained based off data from the top flight of English football. To use this model, click on the field based on where the shot was taken. Then, below will be a list of all the shots and the expected goals for each of them. Enjoy!")
 
 field = Image.open("field.jpg")
 canvas_result = st_canvas(
