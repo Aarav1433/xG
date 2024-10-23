@@ -9,6 +9,18 @@ import pandas as pd
 
 from PIL import Image
 
+st.markdown("""
+<style>
+.big-font {
+    font-size:35px !important;
+}
+</style>
+""", unsafe_allow_html=True)
+
+st.markdown('<p class="big-font">xG Calculator for Soccer by: Aarav Patel</p>', unsafe_allow_html=True)
+
+st.write("Welcome to my xG calculator for shots in soccer. This model was trained based off data from the top flight of English football. To use this model, simply click on the field based on where the shot was taken. Then, below will be a list of all the shots and the expected goals for each of them. Enjoy!")
+
 field = Image.open("field.jpg")
 canvas_result = st_canvas(
     background_image=field,
@@ -44,7 +56,7 @@ def run_model(value):
         sh['Distance'] = np.sqrt(x ** 2 + abs(y - 65 / 2) ** 2)
 
         final = calculate_xG(sh)
-        return ("%.17f" % final).rstrip('0').rstrip('.')
+        return ("%.3f" % final).rstrip('0').rstrip('.')
     else:
         return "PLEASE SELECT A POSITION"
 
